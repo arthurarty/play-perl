@@ -1,6 +1,6 @@
 # Learn perl
 
-## RUn
+## Run
 ```
 perl main.pl
 ```
