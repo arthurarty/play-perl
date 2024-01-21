@@ -1,0 +1,30 @@
+repos:
+  # General Linter
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-case-conflict
+  # language: Python
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.6
+    hooks:
+      - id: ruff
+        args: [ --fix ]
+        # Exclude Django migrations
+        exclude: /migrations
+      - id: ruff-format
+        exclude: /migrations
+  # Language: Perl
+  - repo: local
+    hooks:
+    - id: check-perl-code
+      name: Perl Critic Linter
+      entry: perlcritic . --quiet
+      language: system
+      types: [perl]
+      pass_filenames: false
+      stages: [commit]

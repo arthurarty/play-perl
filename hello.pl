@@ -1,6 +1,6 @@
 use strict;
 use warnings;
 
-my $Variable = "Arthur Nangai";
+my $user_name = "Arthur Nangai";
 
 print "hello, World. Hello Arthur ! \n";
